@@ -26,11 +26,18 @@ public class UtilisateurFacade extends AbstractFacade<Utilisateur> implements Ut
         super(Utilisateur.class);
     }
     
-    public void Auth (int i) {
+    public void Auth (int i, String nom , String mdp) {
         
-        UtilisateurFacadeLocal ufl = new UtilisateurFacade ();
+        //UtilisateurFacadeLocal ufl = new UtilisateurFacade ();
         Utilisateur ut = new Utilisateur (i);
-        ufl.create(ut);
+        ut.setNom(nom);
+        ut.setMotdepasse(mdp);
+        create(ut);
         
+    }
+    
+    public void effacer (Utilisateur ut) {
+        //Utilisateur ut = new Utilisateur ();
+        remove(ut);
     }
 }

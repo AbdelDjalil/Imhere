@@ -41,8 +41,8 @@ public class Test extends HttpServlet {
         PrintWriter out = response.getWriter();
         
         // ajouter avec Olivier
+        //testfacade.Auth(3, "loova", "here");
         List <Utilisateur> testuser = testfacade.findAll();
-        //testfacade.Auth(3);
         // ajouter avec Olivier
         
         try {
@@ -54,10 +54,15 @@ public class Test extends HttpServlet {
             out.println("<body>");
             out.println("<h1>Servlet Test at " + request.getContextPath () + "</h1>");
             for(Utilisateur u : testuser){
+                if(u.getNom()==null){
+                    testfacade.effacer(u);
+                }
+                else {
                 out.println("<ul>");
                 out.println("<li>"+ u.getNom() + " " + u.getMotdepasse() + " " + u.getLatitude() + " " + u.getId() + "</li>");
                 out.println("<ul>");
                 out.println("</ul>");
+                }
             }
             out.println("</body>");
             out.println("</html>");

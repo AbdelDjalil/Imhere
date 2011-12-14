@@ -29,6 +29,8 @@ public interface UtilisateurFacadeLocal {
 
     int count();
     
-    void Auth (int i);
+    void Auth (int i, String nom , String mdp);
+    
+    public void effacer (Utilisateur ut);
     
 }
