@@ -55,7 +55,7 @@ public class Test extends HttpServlet {
             out.println("<h1>Servlet Test at " + request.getContextPath () + "</h1>");
             for(Utilisateur u : testuser){
                 out.println("<ul>");
-                out.println("<li>"+ u.getNom() + " " + u.getMotdepasse() + " " + u.getLatitude() + "</li>");
+                out.println("<li>"+ u.getNom() + " " + u.getMotdepasse() + " " + u.getLatitude() + " " + u.getId() + "</li>");
                 out.println("<ul>");
                 out.println("</ul>");
             }
